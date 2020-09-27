@@ -1,0 +1,139 @@
+body{
+    position: relative;
+    font-size: 1rem;
+}
+html{
+    scroll-behavior: smooth;
+}
+@media screen and (max-width: 1400px){
+    html{
+        font-size: 0.2rem;
+    }
+}
+@media screen and (max-width: 1500px){
+    html{
+        font-size: 0.8rem;
+    }
+}
+
+@media screen and (min-width: 2000px){
+    html{
+        font-size: 1.5rem;
+        
+    }
+    .card-img-top{
+        height: 16rem;
+        width: 20vw;
+    }
+    
+    .card-body{
+        background-color: rgb(248, 249, 250);
+        opacity: 0;
+        height: 100%;
+        width:20vw;
+    }
+    #card-work{
+        width: 20vw;;
+    }
+}
+@media screen and (min-width: 2400px){
+    html{
+        font-size: 2rem;
+    }
+    #card-work{
+        max-height: 15rem;
+        max-width: 15rem;
+    }
+}
+
+/* -- Nav Style -- */
+nav{
+    transition-duration: 700ms;
+}
+.active{
+    border-bottom: 3px solid rgb(255, 193, 7);
+    border-radius: 3px;
+    transition-duration: 300ms;
+}
+
+/* -- End Nav Style -- */
+/* -- Home Style -- */
+#body-home{
+    height: 95vh;
+    background-image: url('../img/wallpaper-webpage.jpg');
+    background-attachment: fixed;
+}
+#home-filter{
+    height: 95vh;
+}
+#wellcome{
+    max-width: fit-content;
+    font-size: larger;
+}
+#wellcome-hello{
+    opacity: 0;
+}
+#wellcome-salute{
+    opacity: 0;
+}
+#wellcome-p{
+    opacity: 0;
+}
+
+
+
+/* -- End Home Style -- */
+/* -- About Style -- */
+#profile-pic{
+    box-shadow: 2px 2px 30px rgb(52, 58, 64);
+    border-radius: 50%;
+}
+
+/* -- End About Style -- */
+/* -- Work Style -- */
+.card-img-top{
+    height: 16rem;
+    
+}
+
+.card-body{
+    background-color: rgb(248, 249, 250);
+    opacity: 0;
+    height: 100%;
+}
+#card-work{
+    max-width: 20rem;
+}
+
+/* -- End Work Style -- */
+/* -- Contact Style -- */
+#body-contact{
+    /*
+    background-color: rgb(52, 58, 64);
+    */
+    background-image: url('../img/wallpaper-section-contact.jpg');
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: bottom;
+}
+#card-contact{
+    border:0;
+    border-radius: 5px;
+    box-shadow: 5px 10px 50px rgb(52, 58, 64);
+}
+
+/* -- End Contact Style -- */
+
+
+#chat-body{
+    height: 50vh;
+    border: 1px solid;
+    border-radius: 10px;
+}
+
+
+
+
+
+
