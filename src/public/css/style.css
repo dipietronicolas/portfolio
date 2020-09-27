@@ -1,9 +1,11 @@
 body{
     position: relative;
     font-size: 1rem;
+    overflow-x: hidden;
 }
 html{
     scroll-behavior: smooth;
+    
 }
 @media screen and (max-width: 1400px){
     html{
@@ -62,6 +64,7 @@ nav{
     height: 95vh;
     background-image: url('../img/wallpaper-webpage.jpg');
     background-attachment: fixed;
+    
 }
 #home-filter{
     height: 95vh;

@@ -25,6 +25,7 @@
 <body data-spy="scroll" data-target="#navbar">
 
   <!-- navbar -->
+
   <nav id='navbar' class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark p-3">
     <div class="container-fluid mx-auto">
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
@@ -50,30 +51,35 @@
       </div>
     </div>
   </nav>
+
   <!-- End Navbar -->
 
   <!-- Body Home -->
-  <div class="container-fluid text-light p-0" id="body-home">
-    <div class="container-fluid position-absolute bg-dark" id="home-filter"></div>
-    <div class="row h-100">
-      <div class="container col-sm-6 col-md-4 col-lg-3 my-auto" id="wellcome">
-        <h1 class="display-3" id="wellcome-hello">Hello!</h1>
-        <h3 class="display-4" id="wellcome-salute">I'm Nicolas</h3>
-        <p id="wellcome-p">Wellcome to my dev Portfolio</p>
+  
+  <section>
+    <div class="container-fluid text-light p-0" id="body-home">
+      <div class="container-fluid position-absolute bg-dark" id="home-filter">
+      <div class="row h-100">
+        <div class="container col-sm-6 col-md-4 col-lg-3 my-auto" id="wellcome">
+          <h1 class="display-3" id="wellcome-hello">Hello!</h1>
+          <h3 class="display-4" id="wellcome-salute">I'm Nicolas</h3>
+          <p id="wellcome-p">Wellcome to my dev Portfolio</p>
+        </div>
       </div>
     </div>
-  </div>
+  </section>
+
   <!-- End Body Home -->
 
   <!-- Body About -->
   <section>
-    <div class="container-fluid py-5 my-5" id='body-about'>
+    <div class="container-fluid py-5 my-5 mx-auto" id='body-about'>
 
       <div class="container col-lg-10 col-xl-7 shadow rounded my-5 p-5">
         <div class="row justify-content-center">
           <div class="col-sm-7 col-lg-4 p-auto  mx-auto">
-            <div class="container" style="width: 250px;">
-              <img src="img/cv.jpg" class="img-fluid lazyload" id="profile-pic"  alt="profile picture">
+            <div class="container mb-5" style="width: 180px;">
+              <img src="img/cv.jpg" class="img-fluid lazyload" id="profile-pic" alt="profile picture">
             </div>
           </div>
           <div class="col-sm-5 col-lg-5 col-xl-5 mx-auto">
@@ -93,32 +99,32 @@
               </p>
               <p>
                 <span class="font-weight-bold">Download my Resume: </span>
-                <h3 class="col-sm-2 mx-auto">
-                  <a href="/resume" alt="donwload my resume" target="_blank"><i class="fas fa-file-alt"></i></a>
-                </h3>
+              <h3 class="col-sm-2 mx-auto">
+                <a href="/resume" alt="donwload my resume" target="_blank"><i class="fas fa-file-alt"></i></a>
+              </h3>
               </p>
             </div>
           </div>
         </div>
 
         <div class="row justify-content-center">
-          <div class="col-md-10 col-lg-10">
+          <div class="col-md-10 col-lg-10 mt-4">
             <div class="pt-4 pt-md-0">
-              <div class="">
-                <h5 class="display-4">
+              <div class="container">
+                <h5 class="display-4 mt-4">
                   About me
                 </h5>
+                <p>
+                  I'm a student of computer science since 2014, i love what i study and that's why i'm looking for a job
+                  as a software developer.
+                </p>
+                <p>If you wish to hire me you can see some of my work down below.</p>
+
               </div>
-              <p>
-                I'm a student of computer science since 2014, i love what i study and that's why i'm looking for a job as a software developer.
-              </p>
-              <p>If you wish to hire me you can see some of my work down below.</p>
-              
             </div>
           </div>
         </div>
       </div>
-    </div>
   </section>
   <!-- End Body About -->
 
@@ -135,8 +141,8 @@
               <h5 class="card-title">Chat room</h5>
               <p class="card-text">Chat room using a MySQL database, Nodejs and Express on the backend.</p>
               <a href="/chat/" class="btn btn-outline-warning text-danger" target='_blank'>Live Preview</a>
-              <a href="https://github.com/dipietronicolas/chat_room_nodejs_expressjs_mysql" class="btn btn-outline-warning text-danger"
-                target='_blank'><i class="fab fa-github"></i> See code</a>
+              <a href="https://github.com/dipietronicolas/chat_room_nodejs_expressjs_mysql"
+                class="btn btn-outline-warning text-danger" target='_blank'><i class="fab fa-github"></i> See code</a>
             </div>
           </div>
           <div class="d-none card col-md-6 col-lg-3 my-5 mx-auto p-0" id="card-work">
