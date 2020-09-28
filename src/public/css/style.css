@@ -35,17 +35,15 @@ html{
         width:20vw;
     }
     #card-work{
-        width: 20vw;;
+        width: 20vw;
     }
+    
 }
 @media screen and (min-width: 2400px){
     html{
         font-size: 2rem;
     }
-    #card-work{
-        max-height: 15rem;
-        max-width: 15rem;
-    }
+    
 }
 
 /* -- Nav Style -- */
@@ -87,6 +85,9 @@ nav{
 
 /* -- End Home Style -- */
 /* -- About Style -- */
+#container-profile-pic{
+    width: 220px;
+}
 #profile-pic{
     box-shadow: 2px 2px 30px rgb(52, 58, 64);
     border-radius: 50%;
@@ -110,7 +111,8 @@ nav{
 
 /* -- End Work Style -- */
 /* -- Contact Style -- */
-#body-contact{
+#section-contact{
+    height:95vh;
     /*
     background-color: rgb(52, 58, 64);
     */

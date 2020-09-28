@@ -11,8 +11,7 @@ window.onload = function wtd() {
   const chat_username = document.getElementById('chat-username');
   const username_error = document.getElementById('username-error');
 
-  const login = document.getElementById('login');
-  const chat_room = document.getElementById('chat-room');
+  // Users
   const users = document.getElementById('users');
 
   // DELETE button
@@ -35,13 +34,7 @@ window.onload = function wtd() {
         $('#delete_button').removeClass('d-none');
         
         chat_username.textContent = username.value;
-        /*
-        login.style.display = "none";
-        chat_room.style.display = "";
-        chat_username.style.display = "";
-        */
         message_box.focus();
-        
       } else {
         username_error.style.display = "";
       }
@@ -51,8 +44,7 @@ window.onload = function wtd() {
   // DELETE button
   delete_button.addEventListener('click', e => {
     //e.preventDefault();
-    socket.emit('delete_messages', () =>{
-    })
+    socket.emit('delete_messages');
   })
 
   // Hola esto es un comentario.
