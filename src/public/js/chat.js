@@ -15,6 +15,9 @@ window.onload = function wtd() {
   const chat_room = document.getElementById('chat-room');
   const users = document.getElementById('users');
 
+  // DELETE button
+  const delete_button = document.querySelector('#delete_button');
+
   username_error.style.display = "none";
   /*
   chat_room.style.display = "none";  
@@ -29,6 +32,7 @@ window.onload = function wtd() {
         $('#login').addClass('d-none');
         $('#chat-room').removeClass('d-none');
         $('#chat-username').removeClass('d-none');
+        $('#delete_button').removeClass('d-none');
         
         chat_username.textContent = username.value;
         /*
@@ -43,6 +47,14 @@ window.onload = function wtd() {
       }
     });
   });
+
+  // DELETE button
+  delete_button.addEventListener('click', e => {
+    //e.preventDefault();
+    socket.emit('delete_messages', () =>{
+    })
+  })
+
   // Hola esto es un comentario.
   message_form.addEventListener('submit', e => {
     e.preventDefault();
@@ -58,11 +70,18 @@ window.onload = function wtd() {
 
   socket.on('usernames', data => {
     let html = '';
-
     for (let i = 0; i < data.length; i++) {
       html += '<i class="fas fa-user mt-1"/>&nbsp;' + data[i] + '<br/>'
     }
-
     users.innerHTML = html;
   });
+
+  socket.on('chats', data => {
+    $('#chat').html('');
+    for (let chat of data) {
+      $('#chat').append(`
+          <b>${chat.username}</b>: ${chat.chat}<br/>
+      `)
+    }
+  })
 }

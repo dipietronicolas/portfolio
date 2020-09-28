@@ -1,6 +1,10 @@
+const dbConnection = require('./database/dbConnection');
+
 module.exports = function (io) {
 
     let usernames = [];
+
+    const connection = dbConnection();
 
     io.on('connection', socket => {
 
@@ -12,6 +16,7 @@ module.exports = function (io) {
                 socket.username = data;
                 usernames.push(socket.username);
                 updateUsernames();
+                updateChat();
                 console.log('Nuevo usuario conectado: ' + socket.username);
             }
         })
@@ -21,6 +26,9 @@ module.exports = function (io) {
                 msg:data,
                 username:socket.username
             });
+            connection.query(`INSERT INTO chat_room (username, chat) VALUES ('${socket.username}', '${data}')`, () =>{
+                console.log("data insertada correctamente");
+            });
         });
 
         socket.on('disconnect', data => {
@@ -29,8 +37,23 @@ module.exports = function (io) {
             updateUsernames();
         });
 
+        socket.on('delete_messages', () =>{
+            deleteChat();
+            updateChat();
+        })
+
         function updateUsernames(){
             io.sockets.emit('usernames', usernames);
+        }
+
+        function updateChat(){
+            connection.query(`SELECT * FROM chat_room`, (err, data ) =>{
+                io.sockets.emit('chats', data);
+            })
+        }
+
+        function deleteChat(){
+            connection.query(`DELETE FROM chat_room`);
         }
     });
 }
