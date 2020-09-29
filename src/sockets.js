@@ -26,7 +26,7 @@ module.exports = function (io) {
                 msg: data,
                 username: socket.username
             });
-            insertChat(data, socket.username);
+            insertChat(socket.username, data);
 
         });
 
@@ -39,7 +39,10 @@ module.exports = function (io) {
 
         socket.on('delete_messages', () => {
             deleteChat();
-            updateChat();
+            setTimeout(()=>{
+                updateChat();
+            },500)
+            
         })
 
         function updateUsernames() {

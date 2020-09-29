@@ -18,21 +18,15 @@ window.onload = function wtd() {
   const delete_button = document.querySelector('#delete_button');
 
   username_error.style.display = "none";
-  /*
-  chat_room.style.display = "none";  
-  chat_username.style.display = "none";
-  */
 
   login_form.addEventListener('submit', e => {
     e.preventDefault();
     socket.emit('new user', username.value, data => {
       if (data) {
-        
         $('#login').addClass('d-none');
         $('#chat-room').removeClass('d-none');
         $('#chat-username').removeClass('d-none');
         $('#delete_button').removeClass('d-none');
-        
         chat_username.textContent = username.value;
         message_box.focus();
       } else {
