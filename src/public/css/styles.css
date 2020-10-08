@@ -540,6 +540,8 @@ pre code {
   .container {
     max-width: 540px;
   }
+  
+  
 }
 @media (min-width: 768px) {
   .container {
@@ -569,6 +571,7 @@ pre code {
   .container-sm, .container {
     max-width: 540px;
   }
+  
 }
 @media (min-width: 768px) {
   .container-md, .container-sm, .container {
@@ -1936,6 +1939,7 @@ pre code {
   .table-responsive-sm > .table-bordered {
     border: 0;
   }
+  
 }
 @media (max-width: 767.98px) {
   .table-responsive-md {
@@ -3985,6 +3989,15 @@ input[type=button].btn-block {
   align-items: center;
   justify-content: space-between;
 }
+
+@font-face {
+  font-family: 'Honeymoon';
+  
+  src: url("../font/Honeymoon.otf");
+  src: url("../font/Honeymoon.ttf");
+}
+
+
 .navbar-brand {
   display: inline-block;
   padding-top: 0.3125rem;
@@ -3993,10 +4006,18 @@ input[type=button].btn-block {
   font-size: 1.25rem;
   line-height: inherit;
   white-space: nowrap;
+  
 }
 .navbar-brand:hover, .navbar-brand:focus {
   text-decoration: none;
 }
+@media (max-width: 450px){
+  .navbar-brand{
+    font-size: small;
+  }
+}
+
+
 
 .navbar-nav {
   display: flex;
@@ -10075,7 +10096,9 @@ img::-moz-selection {
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-weight: 700;
   letter-spacing: 0.0625em;
+  
   text-transform: uppercase;
+  
 }
 #mainNav .navbar-brand img {
   height: 1.5rem;
@@ -10112,7 +10135,7 @@ img::-moz-selection {
     background-color: #212529;
   }
   #mainNav.navbar-shrink .navbar-brand {
-    font-size: 1.25em;
+    font-size: 1.25rem;
   }
   #mainNav.navbar-shrink .navbar-brand svg,
 #mainNav.navbar-shrink .navbar-brand img {
