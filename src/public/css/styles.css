@@ -3990,11 +3990,6 @@ input[type=button].btn-block {
   justify-content: space-between;
 }
 
-@font-face {
-  font-family: 'Honeymoon';
-  src: url("../font/Honeymoon.otf");
-  src: url("../font/Honeymoon.ttf");
-}
 
 @font-face {
   font-family: 'acquire';
