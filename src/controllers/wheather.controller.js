@@ -4,6 +4,7 @@ const indexController = {};
 
 indexController.getApp = async (req, res) =>{
     const dataFetched = await Cities.find();
+    console.log(dataFetched);
     const city_ids = dataFetched.map( (city) =>{
         return city.id;
     })

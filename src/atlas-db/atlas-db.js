@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
-const MONGODB_PASS = 'nicodipi',
-    MONGODB_DATABASE = 'myweatherapp';
+const MONGODB_PASS = process.env.MONGODB_PASS,
+    MONGODB_DATABASE = process.env.MONGODB_DATABASE;
 
 const MONGODB_URL = `
     mongodb+srv://admin:${MONGODB_PASS}@cluster0.aw3rj.mongodb.net/${MONGODB_DATABASE}?retryWrites=true&w=majority
