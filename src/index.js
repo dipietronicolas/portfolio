@@ -1,39 +1,34 @@
-const express = require('express');
-const http = require('http');
-const socketio = require('socket.io');
-const path = require('path');
-const { log } = require('console');
-require('dotenv').config();
+const express = require('express'),
+    http = require('http'),
+    socketio = require('socket.io'),
+    path = require('path'),
+    app = express(),
+    server = http.createServer(app);
 
-const app = express();
-const server = http.createServer(app);
+require('dotenv').config();
 
 // Conexion de web sockets
 const io = socketio.listen(server);
 
-
+// Settings
 app.set('port', process.env.PORT || 3000);
 
 // requiero el archivo sockets.js y le paso mi constante io.
 require('./sockets')(io);
 
+// Middlewares
+app.use(express.urlencoded({ extended: false }));
+
+// Use
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.static(path.join(__dirname, './public', './weather')));
 
-app.get('/weather/', (req, res) =>{
-    const weather_path = path.join(__dirname, '/public', '/weather', '/index.html');
-    //res.sendFile(weather_path);
-    res.render(weather_path);
-})
+// MongoDB Connection
+require('./atlas-db/atlas-db');
 
-app.get('/chat/', (req, res) =>{
-     res.sendFile(path.join(__dirname, '/public', '/views', '/chat.html'));
-})
-
-app.get('/resume/', (req, res) => {
-    console.log(path.join(__dirname, 'public', 'cv'));
-    res.sendFile(path.join(__dirname, 'public', 'cv', 'my_cv.pdf'));
-})
+// Routes
+app.use(require('./routes/routes'));
+app.use(require('./routes/routes.wheather'));
 
 server.listen(app.get('port'), () => {
     console.log('listen on port ' + app.get('port'));
