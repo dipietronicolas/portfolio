@@ -4,10 +4,10 @@ const dbConnection = require('./database/dbConnection');
 // Controlador que se exporta 
 const messageService = {};
 
-messageService.refreshChat = async (io) => {
+messageService.refreshChat = (io) => {
    
   const connection = dbConnection();
-  await connection.query(`SELECT * FROM chat_room`, (err, data) => {
+  connection.query(`SELECT * FROM chat_room`, (err, data) => {
     io.sockets.emit('chats', data)
   })
   connection.end();
